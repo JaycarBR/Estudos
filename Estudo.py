@@ -181,6 +181,7 @@ else:     #A cláusula else só é executada quando a condição do loop se torn
 #lista.insert(índice, item) -> coloca elemento na posição do indice escolhido
 #lista.pop(índice) -> retira o elemento do indice escolhido ->se não colocar o indice, ele tira o último elemento
 #lista.remove(item) -> vai remover pelo elemento, irá remover apenas o primeiro que encontrar que seja semelhante
+#lista = [item for item in lista if item != 2] -> remove todos os elementos iguais a 2 da lista (Lista é igual a item por item na lista se o item for diferente de 2)
 #para copiar uma lista não é apenas "z1=z", isso apenas direciona a variável a demonstrar a lista z, para criar uma lista independente tem que usar "z1=z[:]" ou lista.copy()
 #len(lista) para descobrir o tamanho da lista.
 #del(z) deleta a lista z
@@ -222,7 +223,7 @@ else:
     print("Elemento não encontrado!")
 
 
-for indice in range(len(z)):
+for indice in range(len(z)): #len(z) retorna o tamanho da lista
     if z[indice]==b:
         print("O elemento encontrado está no índice %d" % indice)
     else:
@@ -254,7 +255,7 @@ print(lista2)
 #Tempo execução do for inline:
 
 """import time
-a = time.time()
+a = time.time() #função time() retorna o tempo atual em segundos desde a época (1º de janeiro de 1970, 00:00:00 UTC)
 lista = []
 for x in range(1000000):
     lista.append(x)
@@ -268,7 +269,7 @@ print(time.time() - a)
 """É chamado o pacote "time" e depois usado a função ".time()" que verifica o horário atual da máquina em segundos.
 Ele usa esta função pra pegar o horário de ínicio e final da função, depois subtrai pra saber quanto tempo demorou.
 É feito uma lista onde é adicionado um número gigantesco de elementos para que seja possível passar um tempo grande o
-bastante para ser possível comparar qual método de adição de elemento na lista é mais rápido."""
+bastante para ser possível comparar qual método de adição de elemento na lista é mais rápido.""" #o mais rápido 
 
 """Exercício de listas:
 Faça um algoritmos que armazene 10 números inteiros
@@ -401,6 +402,6 @@ for n_linha in range(10):
 
 for linha in range(len(m)):
     for coluna in range(len(m[linha])):
-        print("%d" % m[linha][coluna], end="  ")dsdf
+        print("%d" % m[linha][coluna], end="  ")
      
     print("\n")"""
