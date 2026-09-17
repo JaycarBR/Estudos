@@ -405,3 +405,58 @@ for linha in range(len(m)):
         print("%d" % m[linha][coluna], end="  ")
      
     print("\n")"""
+
+
+"""Faça um programa que cria uma matriz M (5 x 10), sendo
+que cada elemento é um inteiro gerado aleatoriamente.
+Então, exiba a matriz completa e, na sequência, somente
+os elementos da primeira coluna da matriz."""
+
+"""
+from random import *
+matriz1=[]
+for linha in range(5):
+    Linha=[]
+    for coluna in range(10):
+        valor=randrange(0,101)
+        Linha.append(valor)
+    matriz1.append(Linha)
+
+for linha in range(len(matriz1)):
+    for coluna in range(len(matriz1[linha])):
+        print("%d" % matriz1[linha][coluna], end="  ")
+    print("\n")
+
+print(matriz1[0])
+"""
+
+"""Faça um programa que cria uma matriz M (10 x 10),
+sendo que cada elemento é um inteiro gerado
+aleatoriamente no intervalo [0, 10]. Então, exiba a matriz
+completa e a quantidade de incidências do número 3"""
+
+"""from random import randrange
+matriz=[]
+
+for linha in range(10):
+    Linha=[]
+    for coluna in range(10):
+        valor=randrange(0, 11)
+        Linha.append(valor)
+    matriz.append(Linha)
+
+for linha in range(len(matriz)):
+    for coluna in range(len(matriz[linha])):
+        print("%d" % matriz[linha][coluna], end="  ")
+    print("\n")
+
+contagem=0
+
+for linha in range(len(matriz)):
+    for coluna in range(len(matriz[linha])):
+        if matriz[linha][coluna] == 3:
+            contagem = contagem+1
+        else:
+            continue
+
+print("A matriz tem o número 3 ocorrendo %d vezes" % contagem)"""
