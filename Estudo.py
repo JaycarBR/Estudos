@@ -1,5 +1,3 @@
-print("Oi, seja bem-vindo ao curso de Python!") #print: comando que exibe algo na tela
-
 #não usar acento em nome de variável, diferenciam minúsculas e maiúsculas, não começa nome com nº, aceita "_"
 #Variável com todas as letras maiúsculas: Variável CONSTANTE e sem mudança de valor
 #variável: espaço na memória aonde se guarda um dado
