@@ -460,3 +460,84 @@ for linha in range(len(matriz)):
             continue
 
 print("A matriz tem o número 3 ocorrendo %d vezes" % contagem)"""
+
+
+"""Faça um algoritmo que leia uma matriz M (populada com
+números aleatórios) e exiba como saída o menor número
+dessa matriz bem como o maior número."""
+
+"""from random import randrange
+
+M=[]
+maior=0
+menor=0
+for linha in range(5):
+    Linha=[]
+    for coluna in range(5):
+        elemento=randrange(0, 101)
+        Linha.append(elemento)
+        if maior==0 and menor==0:
+            maior=elemento
+            menor=elemento
+        elif elemento > maior:
+            maior=elemento
+        elif elemento < menor:
+            menor=elemento
+        else:
+            continue
+    M.append(Linha)
+
+for linha in range(len(M)):
+        for coluna in range(len(M[linha])):
+            print("%d" % (M[linha][coluna]), end="  ")
+        print("\n")
+
+print("Maior valor: %d" % (maior))
+print("Menor valor: %d" % (menor))"""
+
+"""Faça um programa que cria uma matriz M (2 x 2), sendo
+que cada elemento deve ser digitado pelo usuário. Então,
+faça seu programa criar outra matriz, N, que é resultante
+do cálculo da multiplicação de cada elemento de M pelo
+maior elemento da própria matriz M."""
+
+"""M=[]
+maior=0
+
+for linha in range(2):
+    Linha=[]
+    for coluna in range(2):
+        valor=int(input("Entre com o valor do elemento da matriz:  "))
+        Linha.append(valor)
+        if valor>maior:
+            maior=valor
+        else:
+            continue
+    M.append(Linha)
+
+for linha in range(len(M)):
+    for coluna in range(len(M[linha])):
+        print("%d" % (M[linha][coluna]), end="  ")
+    print("\n")
+
+print("O valor de maior elemento é: %d" % maior)
+
+resultante=[]
+
+for linha in range(2):
+    Linha=[]
+    for coluna in range(2):
+        Linha.append(M[linha][coluna]*maior)
+    resultante.append(Linha)
+
+for linha in range(2):
+    for coluna in range(2):
+        print("%d" % (resultante[linha][coluna]), end="  ")
+    print("\n")"""
+
+"""Escreva um programa que lê do teclado uma matriz de
+números reais com quatro linhas e três colunas e imprime na
+tela a matriz. Depois lê um valor digitado pelo usuário e
+procura este valor na matriz. Se encontrar o valor, mostra
+sua posição (ou índice). Se não encontrar este valor no vetor,
+mostra na tela uma mensagem que não achou."""
