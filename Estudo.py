@@ -541,3 +541,19 @@ tela a matriz. Depois lê um valor digitado pelo usuário e
 procura este valor na matriz. Se encontrar o valor, mostra
 sua posição (ou índice). Se não encontrar este valor no vetor,
 mostra na tela uma mensagem que não achou."""
+
+"""
+def teste(): 
+    
+    a=9
+    b=6
+    print(a+b)
+    
+teste()
+"""
+
+def teste(a=3, b=8):
+    soma=a+b
+    return(soma)
+
+print(teste())
