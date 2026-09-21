@@ -552,8 +552,80 @@ def teste():
 teste()
 """
 
+"""
 def teste(a=3, b=8):
     soma=a+b
-    return(soma)
+    return(soma) #retorno de forma a ter acesso ao valor fora da função
 
 print(teste(5, 9))
+"""
+
+"""
+def ehpar(num):
+    a= num%2 == 0 #variavel local
+    return(a)
+
+print(ehpar(4))
+print(ehpar(5))
+"""
+
+"""
+a=5 #variavel global: variável do programa principal
+
+def alteravalor():
+    a=7 #variável local: variável acessada apenas dentro da função
+    return(a)
+
+print("Valor de a dentro da função: %d" % alteravalor())
+print("Valor de a da variável global: %d" % a)
+"""
+
+"""
+a=7
+
+def alteravalor():
+    global a
+    a=7+8
+    return(a)
+
+print("Valor de a global atualizado dentro da função: %d" % alteravalor())
+"""
+
+"""
+def soma(a=2, b=3):
+    soma=a+b
+
+    return(soma)
+
+print("Valor da soma na função:", soma())
+print("Valor da soma na função:", soma(8, 9))
+"""
+
+"""
+def teste(*args):
+    print("args aceita tudo como variável: ", args)
+
+teste(4, "a", 4j+3)
+
+def teste2(**kwargs):
+    print('kwargs é tudo que entra, mas sai como um dicionário: ', kwargs)
+
+teste2(a=5, b="juan", c=25)
+"""
+
+def docteste(a=2, b=8):  #função para testar Docstring
+    """Texto apenas para verificar o funcionamento da função DocString"""
+    return(a+b)
+
+"""
+print(docteste.__doc__)
+help(docteste)
+"""
+
+"""
+a=lambda x: x**2 #lambda estabelece função simples em linha determinando paramêtro a variável (x)
+
+print(a(4))
+"""
+
+
