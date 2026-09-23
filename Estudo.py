@@ -202,7 +202,7 @@ Pesquisando listas: WHILE ou FOR
 Exemplo: procurar "c" na lista Z
 
 z= ["a", "b", "c", "d", "e"]
-for elemento in z:
+for elemento in z:   #Para elemento em Z: vai realizar o comando para cada elemento de Z.
     if elemento == "c":
         print("Elemento encontrado!")
         break
@@ -324,7 +324,7 @@ c=[]
 valora=0
 valorb=0
 for x in range(10):
-    a.append(randrange(0, 20))
+    a.append(randrange(0, 20)) #Adiciona elemento aleatório entre 0 e 20 a lista
     b.append(randrange(0, 20))
 print(a)
 print(b)
@@ -723,3 +723,51 @@ print(lista)
 
 print("O maior e o menor valor da lista são respectivamente %d e %d." % maiormenor(lista))
 """
+
+"""Escreva uma função que receba uma lista e remova todos os valores
+duplicados e retorne a lista sem elementos duplicados. Porém a
+função não deve alterar a lista que recebeu como parâmetro."""
+
+"""lista=[0, 4, 5, 7, 8, 4, 6, 1, 9, 0, 5, 3, 6, 8, 4]
+
+def retiraduplicado(lista):
+    aux=[]
+    for x in range(len(lista)):
+        if lista[x] not in aux:
+            aux.append(lista[x])
+        else:
+            continue
+    return aux
+
+novalista=retiraduplicado(lista)
+print(novalista)"""
+
+"""Escreva uma função que receba uma lista de números inteiros e
+retorne duas listas, uma com os números pares e outra com os
+números impares."""
+
+"""from random import randrange
+lista=[]
+for x in range(int(input("digite o tamanho desejado da lista: "))):
+    valor=randrange(0, 101)
+    if valor not in lista:
+        lista.append(valor)
+    else:
+        while valor in lista:
+            valor=randrange(0,101)
+        lista.append(valor)
+
+print(lista)
+
+def parimpar(lista):
+    par=[]
+    impar=[]
+    for x in range(len(lista)):
+        if lista[x]%2==0:
+            par.append(lista[x])
+        else:
+            impar.append(lista[x])
+    return par, impar
+
+print("Lista 1: %s\nLista 2: %s" % parimpar(lista))"""
+
