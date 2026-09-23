@@ -626,4 +626,100 @@ a=lambda x: x**2 #lambda estabelece função simples em linha determinando param
 print(a(4))
 """
 
+"""
+Escreva uma função com parâmetros que receba a base e a
+altura de um triângulo e retorne sua área (A = base * altura / 2).
+"""
 
+"""
+def areatriangulo(base, altura):
+    area=(base*altura)/2
+    return area
+
+print(areatriangulo(int(input("Entre com a base do triângulo: ")), int(input("Entre com a altura do triângulo: "))))
+"""
+
+"""
+Escreva uma função lambda que receba a base e a altura de um
+triângulo e retorne sua área (A = base * altura / 2).
+
+"""
+
+"""
+area=lambda base, altura: (base*altura)/2
+
+print(area(int(input("Escreva a base do triângulo: ")), int(input("Escrea a altura do triângulo: "))))
+"""
+
+"""Escreva uma função lambda chamada par que receba um número
+e retorne True se o número é par ou False caso contrário."""
+
+"""
+ehpar= lambda n: n%2 == 0
+print(ehpar(int(input("Entre com valor para verificar se é par: "))))
+"""
+
+"""
+notas=[]
+
+def medianota(notas):
+    media=(notas[0]+notas[1]+notas[2]+notas[3])/4
+    return media
+
+print("entre com 4 notas do aluno! \n")
+
+for x in range(1,5):
+    nota=input("Entre com a nota %d: " % x)
+    if nota.strip()== "":
+        nota=0
+        notas.append(int(nota))
+    else:
+        notas.append(int(nota))
+
+print(medianota(notas))
+"""
+
+"""Escreva uma função lambda que receba quatro parametros referente a
+notas de atividades do aluno e retorne a media dessa 4 notas, caso
+algumas notas não sejam atribuidas na chamada da função, atribuir como
+padrão o valor zero para essa notas."""
+
+"""notas=[]
+medianota= lambda notas: (notas[0]+notas[1]+notas[2]+notas[3])/4
+
+for x in range(1,5):
+    nota=input("Entre com a nota %d: " % x)
+    if nota.strip()== "":
+        nota=0
+        notas.append(int(nota))
+    else:
+        notas.append(int(nota))
+
+print(medianota(notas))"""
+
+"""Escreva uma função que receba uma lista de números e retorne o
+maior e o menor número dessa lista."""
+
+"""lista=[]
+
+def maiormenor(lista):
+    maior=0
+    menor=0
+    for x in range(len(lista)):
+        if maior==0 and menor ==0:
+            maior=lista[x]
+            menor=lista[x]
+        elif maior < lista[x]:
+            maior = lista[x]
+        elif menor > lista[x]:
+            menor=lista[x]
+    return(maior, menor)
+
+
+for x in range(int(input("Quantos números quer colocar na lista? "))):
+    valor=int(input("Coloque o valor %d: " % x))
+    lista.append(valor)
+print(lista)
+
+print("O maior e o menor valor da lista são respectivamente %d e %d." % maiormenor(lista))
+"""
