@@ -541,7 +541,7 @@ sua posição (ou índice). Se não encontrar este valor no vetor,
 mostra na tela uma mensagem que não achou."""
 
 """
-def teste(): 
+def teste(): #define nova função
     
     a=9
     b=6
@@ -551,7 +551,7 @@ teste()
 """
 
 """
-def teste(a=3, b=8):
+def teste(a=3, b=8): #Se não receber parâmetros, a função é ativa com a=3 d b=8 por padrão
     soma=a+b
     return(soma) #retorno de forma a ter acesso ao valor fora da função
 
@@ -559,7 +559,7 @@ print(teste(5, 9))
 """
 
 """
-def ehpar(num):
+def ehpar(num): #função precisa receber um parâmetro num
     a= num%2 == 0 #variavel local
     return(a)
 
@@ -584,7 +584,7 @@ a=7
 def alteravalor():
     global a
     a=7+8
-    return(a)
+    return(a) #ao fim da função, retorna a variável "a"
 
 print("Valor de a global atualizado dentro da função: %d" % alteravalor())
 """
