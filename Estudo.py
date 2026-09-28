@@ -771,3 +771,122 @@ def parimpar(lista):
 
 print("Lista 1: %s\nLista 2: %s" % parimpar(lista))"""
 
+"""Funções Recursivas: Funções que chamam a si mesmas, geralmente usadas para
+resolver problemas que podem ser divididos em subproblemas menores do mesmo tipo.
+Um exemplo clássico de função recursiva é o cálculo do fatorial de um número.
+Outro exemplo é a sequência de Fibonacci, onde cada número é a soma dos dois anteriores."""
+
+"""def fatorial(n):
+    if n == 0 or n == 1:  # Caso base: fatorial de 0 e 1 é 1
+        return 1
+    else:
+        return n * fatorial(n - 1)  # Chamada recursiva
+
+# Exemplo de uso:
+numero = int(input("Digite um número para calcular o fatorial: "))
+print("O fatorial de %d é %d." % (numero, fatorial(numero)))"""
+
+#String é uma cadeia de caracteres, podem ser criadas com aspas simples ou duplas.
+#A diferença é que aspas simples permitem o uso de aspas duplas dentro da string e vice-versa.
+#Strings são imutáveis, ou seja, não podem ser alteradas após serem criadas.
+#Para modificar uma string, é necessário criar uma nova string com as alterações desejadas.
+
+#ASCII - American Standard Code for Information Interchange, é um padrão de codificação de caracteres.
+#ISO 8859-1 - Padrão de codificação de caracteres que inclui caracteres acentuados e símbolos especiais.
+#Unicode - Padrão de codificação de caracteres que inclui caracteres de praticamente todos os idiomas do mundo (138k caracteres).
+#UTF-8 - 8-bit Unicode Transformation format: Padrão de codificação compatível com ASCII e Unicode, é utilizado na web.
+
+#Hexadecimal - Sistema de numeração base 16, utiliza os dígitos de 0 a 9 e as letras A a F para representar os valores de 10 a 15.
+#Decimal - Sistema de numeração base 10, utiliza os dígitos de 0 a 9 para representar os valores.
+#Octal - Sistema de numeração base 8, utiliza os dígitos de 0 a 7 para representar os valores.
+
+"""#Exemplo de print de unicode:
+print("\U0001f600") #onde U indica que é unicode e 0001f600 é o código do emoji de rosto sorridente.
+
+#Para imprimir o valor ASCII/Unicode de um caractere, podemos usar a função ord():
+print(ord('A'))  #Resultado: 65, que é o valor ASCII do caractere 'A'
+print(ord('a'))  #Resultado: 97, que é o valor ASCII do caractere 'a'
+print(ord('á'))  #Resultado: 225, que é o valor Unicode do caractere 'á'
+
+#Para imprimir o caractere correspondente a um valor ASCII/Unicode, podemos usar a função chr():
+print(chr(65))  #Resultado: 'A', que é o caractere correspondente ao valor ASCII 65
+print(chr(97))  #Resultado: 'a', que é o caractere correspondente ao valor ASCII 97
+print(chr(225))  #Resultado: 'á', que é o caractere correspondente ao valor Unicode 225"""
+
+"""As aspas triplas ou "bloco de strings" permitem a criação de strings que ocupam múltiplas linhas,
+enquanto as aspas simples e duplas são usadas para strings de uma única linha. Além disso, as aspas triplas
+podem ser usadas para criar docstrings, que são strings de documentação para funções, classes e módulos."""
+
+#Para inserir caracteres ilegais em uma string, podemos usar a barra invertida "\" como caractere de escape. Por exemplo:
+#\n - nova linha ou new line
+#\t - tabulação ou tab
+#\\ - barra invertida ou backslash
+#\' - aspas simples ou single quote
+#\" - aspas duplas ou double quote
+#\r - retorno de carro ou carriage return
+#\b - backspace
+#\f - avanço de página ou form feed
+#\v - tabulação vertical ou vertical tab
+#\ooo - caractere octal, onde o "ooo" é um número octal de 1 a 3 dígitos
+#\xhh - caractere hexadecimal, onde o "hh" é um número hexadecimal de 1 a 2 dígitos
+#\N{name} - caractere Unicode, onde "name" é o nome do caractere Unicode
+#\uXXXX - caractere Unicode, onde "XXXX" é um número hexadecimal de 4 dígitos
+
+#Strings são tuplas de caracteres.
+#Tuplas são estruturas de dados que armazenam uma sequência de elementos, que podem ser de tipos diferentes, e são imutáveis.
+#As tuplas são definidas usando parênteses () e os elementos são separados por vírgulas. Por exemplo:
+#tupla = (1, 2, 3, 'a', 'b', 'c') #tupla com 6 elementos, sendo 3 inteiros e 3 strings.
+
+#Índices:
+#Podemos acessar cada caractere de uma string usando índices, assim como fazemos com listas e tuplas. Por exemplo:
+#string = "Python" 
+
+"""print(string[0])  #Resultado: 'P', que é o primeiro caractere da string
+print(string[1])  #Resultado: 'y', que é o segundo caractere da string
+print(string[-1])  #Resultado: 'n', que é o último caractere da string"""
+
+#Slicing: O Fatiamento serve para extrairmos uma parte específica de uma string. Por exemplo:
+"""Podemos fatiar uma string usando a sintaxe [início:fim:passo],
+onde início é o índice do primeiro caractere a ser incluído, fim é o índice do primeiro caractere a ser excluído
+e passo é o número de caracteres a serem pulados."""
+
+#Exemplos:
+#string = "Python"
+"""print(string[1:3]) #Resultado: 'yt', que são os caracteres do índice 1 ao 2 (3 é excluído)
+print(string[:4]) #Resultado: 'Pyth', que são os caracteres do índice 0 ao 3 (4 é excluído)
+print(string[2:]) #Resultado: 'thon', que são os caracteres do índice 2 ao final da string
+print(string[::2]) #Resultado: 'Pto', que são os caracteres do índice 0 ao final da string, pulando de 2 em 2 caracteres"""
+
+#Strings são imutáveis, ou seja, não podemos alterar os caracteres de uma string após ela ter sido criada.
+#Não podemos mudar "P" em "Python" para "J" apenas colocando string[0] = "J", pois isso geraria um erro.
+
+#Para modificar uma string, precisamos criar uma nova string com as alterações desejadas. Por exemplo:
+#s = "Python"
+s_novo = "J" + s[1:] #Cria uma nova string com "J" no lugar de "P"
+
+#Métodos para serem utilizados com strings:
+
+#Capitalize() - Converte o primeiro caractere da string para maiúsculo e os demais para minúsculo.
+#Upper() - Converte todos os caracteres da string para maiúsculo.
+#Lower() - Converte todos os caracteres da string para minúsculo.
+#Title() - Converte o primeiro caractere de cada palavra da string para maiúsculo.
+#Swapcase() - Converte todos os caracteres maiúsculos para minúsculos e vice-versa.
+#count(substring) - Retorna o número de ocorrências de uma substring na string.
+#find(substring) - Retorna o índice da primeira ocorrência de uma substring na string. Retorna -1 se não encontrar.
+#rfind(substring) - Retorna o índice da última ocorrência de uma substring na string. Retorna -1 se não encontrar.
+#index(substring) - Retorna o índice da primeira ocorrência de uma substring na string. Gera um erro se não encontrar.
+#rindex(substring) - Retorna o índice da última ocorrência de uma substring na string. Gera um erro se não encontrar.
+#replace(old, new) - Substitui todas as ocorrências de uma substring por outra substring.
+#islower() - Retorna True se todos os caracteres da string forem minúsculos. Caso contrário, retorna False.
+#isupper() - Retorna True se todos os caracteres da string forem maiúsculos.
+#isdigit() - Retorna True se todos os caracteres da string forem dígitos. Caso contrário, retorna False.
+#isalpha() - Retorna True se todos os caracteres da string forem letras. Caso contrário
+#split(sep) - Divide a string em uma lista de substrings, usando o separador sep. Se sep não for especificado, usa-se espaço em branco como padrão. Exemplo: "a b c".split() -> ['a', 'b', 'c']
+#join(iterable) - Junta uma lista de strings em uma única string, usando a string como separador. Exemplo: "-".join(['a', 'b', 'c']) -> 'a-b-c'
+#strip() - Remove os espaços em branco do início e do fim da string. Exemplo: "  a b c  ".strip() -> 'a b c'
+#format() - Formata a string, substituindo os marcadores {} pelos valores passados como argumentos. Exemplo: "Olá, {}!".format("mundo") -> 'Olá, mundo!'
+#len() - Retorna o tamanho da string, ou seja, o número de caracteres que ela possui. Exemplo: len("Python") -> 6
+
+
+
+
