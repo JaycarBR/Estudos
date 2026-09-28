@@ -862,7 +862,7 @@ print(string[::2]) #Resultado: 'Pto', que são os caracteres do índice 0 ao fin
 
 #Para modificar uma string, precisamos criar uma nova string com as alterações desejadas. Por exemplo:
 #s = "Python"
-s_novo = "J" + s[1:] #Cria uma nova string com "J" no lugar de "P"
+#s_novo = "J" + s[1:] #Cria uma nova string com "J" no lugar de "P"
 
 #Métodos para serem utilizados com strings:
 
