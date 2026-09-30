@@ -867,10 +867,10 @@ print(string[::2]) #Resultado: 'Pto', que são os caracteres do índice 0 ao fin
 #Métodos para serem utilizados com strings:
 
 #Capitalize() - Converte o primeiro caractere da string para maiúsculo e os demais para minúsculo.
-#Upper() - Converte todos os caracteres da string para maiúsculo.
-#Lower() - Converte todos os caracteres da string para minúsculo.
-#Title() - Converte o primeiro caractere de cada palavra da string para maiúsculo.
-#Swapcase() - Converte todos os caracteres maiúsculos para minúsculos e vice-versa.
+#upper() - Converte todos os caracteres da string para maiúsculo.
+#lower() - Converte todos os caracteres da string para minúsculo.
+#title() - Converte o primeiro caractere de cada palavra da string para maiúsculo.
+#swapcase() - Converte todos os caracteres maiúsculos para minúsculos e vice-versa.
 #count(substring) - Retorna o número de ocorrências de uma substring na string.
 #find(substring) - Retorna o índice da primeira ocorrência de uma substring na string. Retorna -1 se não encontrar.
 #rfind(substring) - Retorna o índice da última ocorrência de uma substring na string. Retorna -1 se não encontrar.
@@ -887,6 +887,53 @@ print(string[::2]) #Resultado: 'Pto', que são os caracteres do índice 0 ao fin
 #format() - Formata a string, substituindo os marcadores {} pelos valores passados como argumentos. Exemplo: "Olá, {}!".format("mundo") -> 'Olá, mundo!'
 #len() - Retorna o tamanho da string, ou seja, o número de caracteres que ela possui. Exemplo: len("Python") -> 6
 
+#Exercícios:
 
+"""Peça ao usuário uma string e imprima se essa string é um palíndromo ou não."""
 
+"""palavra=input("Digite uma palavra ou frase para verificar se é palíndromo: ")
 
+auxiliar1=palavra.replace(" ","")
+auxiliar1=auxiliar1.lower()
+auxiliar2=""
+for x in reversed(range(len(auxiliar1))):   #reversed() inverte a ordem da sequência, indo de 4 para 0
+
+if auxiliar1 == auxiliar2:
+    print("%s é um palíndromo" % palavra)
+else:
+    print("%s não é um palíndromo" % palavra)"""
+
+"""Faça um algoritmo que conte a quantidade de incidências de todas as palavras
+em uma String, assim listando todas as palavras e suas quantidades, considere
+como palavras as que tenha uma quantidade igual ou maior que duas letras."""
+palavras=[]
+contagens=[]
+texto=input("Entre com uma frase para verificar a incidência de cada palavra no texto: ").lower()
+texto=texto.replace(",","")
+texto=texto.replace(".","")
+texto=texto.split()
+
+print(texto)
+
+listapalavras= [palavra for palavra in texto if len(palavra) >= 2]
+
+print(listapalavras)
+
+for palavra in range(len(listapalavras)):
+    aux=listapalavras[palavra]
+    if listapalavras[palavra] not in palavras:
+        contagem=0
+        for x in range(len(listapalavras)):
+            if listapalavras[x] == aux:
+                contagem=contagem+1
+            else:
+                continue
+        palavras.append(listapalavras[palavra])
+        contagens.append(" - Repetições: "+str(contagem))
+    else:
+        continue
+    
+for x in range(len(palavras)):
+    print('Palavra: '+palavras[x].upper()+contagens[x])
+
+    
