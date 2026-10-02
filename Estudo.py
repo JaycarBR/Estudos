@@ -906,7 +906,8 @@ else:
 """Faça um algoritmo que conte a quantidade de incidências de todas as palavras
 em uma String, assim listando todas as palavras e suas quantidades, considere
 como palavras as que tenha uma quantidade igual ou maior que duas letras."""
-palavras=[]
+
+"""palavras=[]
 contagens=[]
 texto=input("Entre com uma frase para verificar a incidência de cada palavra no texto: ").lower()
 texto=texto.replace(",","")
@@ -934,6 +935,97 @@ for palavra in range(len(listapalavras)):
         continue
     
 for x in range(len(palavras)):
-    print('Palavra: '+palavras[x].upper()+contagens[x])
+    print('Palavra: '+palavras[x].upper()+contagens[x])"""
 
+#Modos de abertura de arquivo:
+#r - leitura (padrão)
+#w - escrita (sobrescreve o arquivo se existir)
+#a - escrita (adiciona ao final do arquivo se existir)
+#+ - leitura e escrita (não sobrescreve o arquivo se existir)
+#rb ou wb - leitura ou escrita em binário (não sobrescreve o arquivo se existir)
     
+#Exemplo: arquivo = open("teste.dat", "w") #Abertura de arquivo para escrita, se o arquivo não existir, ele será criado. Se existir, será sobrescrito.
+
+#Por padrão, o arquivo é aberto na codificação de caracteres do sistema operacional.
+#Para determinar a codificação no open(), usamos o terceiro parâmetro:
+#arquivo = open("teste.dat", "w", encoding="utf-8") #Abertura com codificação UTF-8.
+
+#Quando o arquivo não existir, dará erro com as seguintes funções: open(), read(), readline(), readlines(), write(), writelines().
+#O arquivo será automaticamente criado se já não existir quando for aberto com os modos: "w", "a", "x" ou "w+".
+
+#verificar se o arquivo existe antes:
+
+"""import os #os é um módulo que fornece funções para interagir com o sistema operacional, como manipulação de arquivos e diretórios.
+import sys #sys é um módulo que fornece funções e variáveis para interagir com o interpretador Python, como manipulação de argumentos e saída de erro.
+exists = os.path.isfile("teste.dat") #isfile() verifica se o arquivo existe e é um arquivo regular (não um diretório).
+if exists == False:
+    print("Arquivo não existe, saindo!")
+    sys.exit()"""
+
+#Usar o controle de exceções para tratar erros de abertura de arquivo:
+
+try:                                                        #try tenta executar o código dentro do bloco, se der erro, vai para o except
+    report = open("teste.dat", "w")                         #Acessa o arquivo para escrita
+    report.write("Alguma mensagem")                         #Escreve a mensagem no arquivo
+except Exception as e:                                      #except captura o erro e armazena na variável e
+    report.write("Erro ao abrir o arquivo: %s" % e)         #Escreve a mensagem de erro no arquivo
+finally:                                                    #finally executa o código dentro do bloco, independente de ter dado erro ou não
+    report.close()                                          #.close() Fecha o arquivo
+
+#Enquanto o arquivo não for fechado, o SO não libera o uso do arquivo e de seus recursos, e continua ocupando memória auxíliar do buffer.
+#O Python posseui um coletor de lixo próprio para limpar objetos não-referenciados, mas não devemos confiar nele para liberar recursos do SO,
+# pois ele não é determinístico e pode não liberar o arquivo imediatamente, causando problemas de concorrência e perda de dados.
+
+#Funções para manipulação de arquivos:
+    #Entradas ou Leitura:
+        #read() - lê todo o conteúdo do arquivo e retorna como uma string.
+        #readline() - lê uma única linha do arquivo e retorna como uma string.
+        #readlines() - lê todas as linhas do arquivo e retorna como uma lista de strings
+
+    #Saídas:
+        #write(string) - escreve a string no arquivo.
+        #writelines(lista) - escreve uma lista de strings no arquivo.
+
+
+"""
+testeleitura = open("teste.txt", "r")
+for linha in testeleitura.readlines():           #Um \n é add ao final de cada linha, a não ser na última.
+    print(linha)                                    #O print também adiciona uma nova linha ai final de cada print.
+testeleitura.close()"""
+#para evitar a linha adicional, podemos usar o print(linha, end="") ou print(linha.strip()) para retirar os espaços em branco do início e do fim da linha.
+
+"""
+testeleitura = open("teste.txt", "r")
+linha= testeleitura.readline()                   #Se o final do arquivo for atingido, readline() retorna uma string vazia. Se for lido uma linha em branco, é retornado apenas o \n.
+print(linha)
+testeleitura.close()"""
+
+"""
+meuarquivo = open("teste.txt", "r")   #leitura eficiente com readline().
+for linha in meuarquivo:
+    print(linha, end = '')
+meuarquivo.close()"""
+
+#Outra forma de ler os arquivos é usar o 'meuarquivo.read(size)' que lê 'size' quantidade de dados e os retorna como string ou bytes objeto no modo binário.
+#"size" é um argumento numérico opcional, se o parâmetro não for especificado ou negativo, lê todo o arquivo. Se for especificado, lê até 'size' bytes ou caracteres, dependendo do modo de abertura do arquivo.
+#Se o final do arquivo for atingido, read() retorna uma string vazia. Se for lido uma linha em branco, é retornado apenas o \n.
+#Se o arquivo for maior que a memória da máquina, o read() pode causar um erro de memória insuficiente. Para evitar isso, podemos ler o arquivo em blocos menores usando um loop.
+
+"""testeleitura = open("teste.txt", "r")
+texto= testeleitura.read(12) #Lê os 10 primeiros caracteres do arquivo, contando "\n"
+print(texto)
+testeleitura.close()"""
+
+#.readlines() pode devolver todas as linhas como uma lista:
+
+"""arq = open('teste.txt', 'r')
+texto = arq.readlines()
+print(texto)
+arq.close()"""
+
+#Para escrever no arquivo, usamos a função .write()
+"""novo= open("testeR", "w")
+for linha in range(1, 31):
+    novo.write("Linha %d\n" % linha) #Para escrever no arquivo, os dados precisam ser convertidos para string, caso contrário, será gerado um erro.
+novo.close()"""
+
