@@ -986,6 +986,12 @@ finally:                                                    #finally executa o c
         #write(string) - escreve a string no arquivo.
         #writelines(lista) - escreve uma lista de strings no arquivo.
 
+    #Métodos para arquivos:
+                #seek(x) posiciona o cursor para o ínicio de acordo com x
+                #seekable() retorna True se o cursor puder ser movido para qualquer posição do arquivo (random).
+                #tell() retorna a posição atual do cursor no arquivo.
+                #writable() retorna True se o arquivo puder ser escrito.
+                #fileno() retorna o número do descritor de arquivo do arquivo.
 
 """
 testeleitura = open("teste.txt", "r")
@@ -1028,4 +1034,77 @@ arq.close()"""
 for linha in range(1, 31):
     novo.write("Linha %d\n" % linha) #Para escrever no arquivo, os dados precisam ser convertidos para string, caso contrário, será gerado um erro.
 novo.close()"""
+
+"""gerar e gravar números pares e ímpares em arquivos separados. Números de 0 a 999."""
+
+"""impares = open("Ímpares.txt", "w")
+pares = open("Pares", "w")
+
+for n in range(0, 1000):
+    if n % 2 == 0:
+        pares.write("%d\n" % n)
+    else:
+        impares.write("%d\n" % n)
+
+impares.close()
+pares.close()"""
+
+"""
+multiplos4 = open("Multiplos_4.txt", "w")
+pares=open("Pares", "r")
+
+for linha in pares.readlines():
+    if int(linha) % 4 ==0:
+        multiplos4.write(linha)
+    else:
+        continue
+pares.close()
+multiplos4.close()
+"""
+
+"""contatos = open("Contatos.txt", "w")
+nome= input("Nome: ")
+telefone= input("Telefone: ")
+
+while nome != "":
+    contatos = open("Contatos.txt", "a" )
+    contatos.write("%s %s\n" % (nome, telefone))
+    contatos.close()
+    nome = input("nome: ")
+    telefone=input("Juan")"""
+
+"""agenda=open("Contatos.txt", "r")
+conteudo=agenda.readlines()
+print(conteudo)"""
+
+"""#.split
+nome, telefone= input("Entre com o nome e o telefone: ").split(" ")    #Se só escrever o nome, vai dar erro
+print(nome)
+print(telefone)"""
+
+"""contatos=open("Contatos.txt", "r")
+contato=[]
+teste=contatos.readlines() #após ler todas as linhas, o cursor fica no final.
+print(teste)
+contatos.seek(0) #O .seek(0) retorna o cursor para o ínicio. 
+for linha in contatos.readlines():
+    linha_separada=linha.split(" ")
+    contato.append(linha_separada)
+
+print(contato)
+print(contato[0])
+print(contato[0][0])
+print(contato[0][1])"""
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+with open("arquivo_matriz.bin", "wb") as arquivo_novo:
+    for linha in matrix:
+        for elemento in linha:
+            arquivo_novo.write(elemento.to_bytes(4, byteorder="big"))
+            
+#O to_bytes(4, byteorder="big") O to_bytes() é um método que converte um número inteiro
+#em uma sequência de bytes. O primeiro argumento (4) indica o tamanho da sequência de bytes
+#(4 bytes = 32 bits), e o segundo argumento (byteorder="big") indica a ordem dos bytes
+#(big-endian, ou seja, o byte mais significativo vem primeiro).
 
