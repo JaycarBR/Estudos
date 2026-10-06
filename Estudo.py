@@ -1096,6 +1096,8 @@ print(contato[0])
 print(contato[0][0])
 print(contato[0][1])"""
 
+"""
+#Escrever em binário:
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 with open("arquivo_matriz.bin", "wb") as arquivo_novo:
@@ -1107,4 +1109,23 @@ with open("arquivo_matriz.bin", "wb") as arquivo_novo:
 #em uma sequência de bytes. O primeiro argumento (4) indica o tamanho da sequência de bytes
 #(4 bytes = 32 bits), e o segundo argumento (byteorder="big") indica a ordem dos bytes
 #(big-endian, ou seja, o byte mais significativo vem primeiro).
+
+#ler em binário:
+arquivo_novo = open("arquivo_matriz.bin", "rb")
+for linha in matrix:
+    for elemento in linha:
+        print(arquivo_novo.read(4))
+
+arquivo_novo.close()
+
+#Converter de volta para decimal:
+arquivo_novo = open("arquivo_matriz.bin", "rb")
+
+for linha in matrix:
+    for elemento in linha:
+        dados = arquivo_novo.read(4)
+        numero = int.from_bytes(dados, byteorder="big") #O from_bytes() é um método que converte uma sequência de bytes em um número inteiro. O primeiro argumento (dados) é a sequência de bytes, e o segundo argumento (byteorder="big") indica a ordem dos bytes (big-endian, ou seja, o byte mais significativo vem primeiro).
+        print(numero)
+
+arquivo_novo.close()"""
 
