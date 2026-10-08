@@ -1129,3 +1129,74 @@ for linha in matrix:
 
 arquivo_novo.close()"""
 
+"""
+Faça um programa que cria uma arquivo chamado pares2.txt. O arquivo deverá conter
+números pares de 0 até 998."""
+
+"""pares=open("Pares2.txt", "w")
+for line in range(0, 999, 2):
+    pares.write("%s\n" % line)
+pares.close()"""
+
+"""Crie um programa que inverta a ordem das linhas do arquivo pares.txt. A primeira linha
+deve conter o maior número e a última linha o menor. Salve o resultado em outro
+arquivo, chamado pares_invertido.txt."""
+
+"""leitura=open("Pares2.txt", "r")
+aux=leitura.read()
+aux=aux.split("\n")
+escrita=open("Pares_invertido.txt", "w")
+for line in reversed(range(len(aux))):
+    escrita.writelines(aux[line]+"\n")
+leitura.close()
+escrita.close"""
+
+"""Escreva uma função em Python para retornar a somatória de todos os números que
+estão armazenados no arquivo “numeros2.txt”. Todos os números do arquivo estão na
+mesma e única linha, separados por espaço."""
+
+"""num=open("numeros2.txt", "w")
+num.write("12 80 4 52 8 23 97 22 4")
+num.close()"""
+
+"""leitura=open("numeros2.txt", "r")
+aux=leitura.read()
+aux=aux.split(" ")
+somatoria=0
+for x in range(len(aux)):
+    somatoria=somatoria+int(aux[x])
+print(somatoria)
+leitura.close"""
+
+"""Escreva uma função que leia uma sequência numérica do arquivo “numeros3.txt” e
+salva os números na lista num. Esta função deve retornar num. Escreva outra função
+que recebe a lista num como parâmetro e retorna uma nova lista num_unicos, sem os
+elementos repetidos. Escreva uma terceira função que recebe a lista num_unicos e
+grava os números no arquivo “numeros3unicos.txt”"""
+
+"""num=open("numeros3.txt", "w")
+num.write("11 18 5 22 4 16 12 3 11 14 5 9 22 4 16 3 8 15 1 21 5 9 18")
+num.close()"""
+
+"""def fnumeros():
+    numeros=open("numeros3.txt", "r")
+    num=numeros.read()
+    num=num.split()
+    return num
+
+def tirarepetido(lista):
+    lista_num= lista
+    num_unicos=[]
+    for x in range(len(lista_num)):
+        if lista_num[x] not in num_unicos:
+            num_unicos.append(lista_num[x])
+    print(num_unicos)
+    return num_unicos
+
+def fnumeros2(lista):
+    listanum=lista
+    numeros=open("numeros3unicos.txt", "w")
+    for x in range(len(listanum)):
+        numeros.write(str(listanum[x])+" ")
+    
+fnumeros2(tirarepetido(fnumeros()))"""
