@@ -1200,3 +1200,155 @@ def fnumeros2(lista):
         numeros.write(str(listanum[x])+" ")
     
 fnumeros2(tirarepetido(fnumeros()))"""
+
+#Dicionários são vetores associativos, estruturas de dados que armazenam pares de chave-valor, onde cada chave é única
+#e é usada para acessar o valor correspondente. Eles são definidos usando chaves {} e os pares de
+# chave-valor são separados por vírgulas: (chaves:valores).
+#Os valores são acessados usando a chave correspondente, assim como fazemos com listas e tuplas, mas usando colchetes [].
+
+#Exemplo de dicionário:
+"""Teste_dicionario = {
+    "nome": "Juan",
+    "idade": 25,
+    "cidade": "São Paulo",
+    "profissão": "Engenheiro"
+}
+
+print(Teste_dicionario) #Retorna dicionário completo
+print(Teste_dicionario["nome"]) #Retorna o valor associado à chave "nome", que é "Juan"
+teste_dicionario["Nacionalidade"] = "Brasileiro" #Adiciona um novo par chave-valor ao dicionário
+del Teste_dicionario["profissão"] #del Remove o par chave-valor associado à chave "profissão"""
+
+#Métodos de dicionários:
+
+#keys() #Retorna todas as chaves do dicionário
+#values() #Retorna todos os valores do dicionário
+#list(dicionario) #Após o métido keys() ou values() retorna uma lista de todas as chaves ou valores do dicionário
+#items() #Retorna uma lista de tuplas, onde cada tupla contém um par chave-valor do dicionário
+#clear() #Remove todos os pares chave-valor do dicionário
+#copy() #Retorna uma cópia rasa do dicionário
+#fromkeys(seq, value) #Cria um novo dicionário com as chaves da sequência seq e o valor value para todas as chaves
+#get() #Retorna o valor associado à chave especificada, ou None se a chave não existir
+#pop() #Remove o par chave-valor associado à chave especificada e retorna o valor removido
+#popitem() #Remove e retorna um par chave-valor aleatório do dicionário
+#setdefault() #Retorna o valor associado à chave especificada, ou adiciona a chave com o valor padrão se a chave não existir
+#update() #Atualiza o dicionário com os pares chave-valor de outro dicionário ou de uma sequência de pares chave-valor
+#eval() #Converte uma string de volta para dicionário, mas deve ser usado com cuidado, pois pode executar código malicioso se a string não for confiável.
+
+#dict. é a forma de criar um dicionário vazio, ou seja, sem pares chave-valor. Por exemplo:
+dicionario_vazio = dict() #Cria um dicionário vazio
+
+#exemplo fromkeys():
+"""x=["nome", "idade", "cidade"]
+y=0
+novodicionario=dict.fromkeys(x, y) #Cria um novo dicionário com as chaves da lista x e o valor y para todas as chaves
+print(novodicionario) #Retorna {'nome': 0, 'idade': 0, 'cidade': 0}"""
+
+#Se usarmos o "=" para uma variável com um dicionário, estaremos criando 2 variáveis que
+#apontam para o mesmo dicionário, ou seja, se alterarmos uma variável, a outra também será alterada.
+#Para criar uma cópia independente do dicionário, devemos usar o método copy().
+
+#Dicionários aninhados - Exemplo:
+
+"""
+myfamily = {
+    "pai": {   
+        "nome": "Alfonso",
+        "idade": 74
+    },
+    "mãe": {
+        "nome": "Neusa",
+        "idade": 70
+    },
+    "filho": {
+        "nome": "Juan",
+        "idade": 25
+    }
+}"""
+
+#iteração em dicionários - Exemplo:
+"""
+for chave in Teste_dicionario:
+    print(chave) #Retorna todas as chaves do dicionário
+
+for valor in Teste_dicionario.values():
+    print(valor) #Retorna todos os valores do dicionário
+
+for chave, valor in Teste_dicionario.items():
+    print(f"{chave}: {valor}") #Retorna todas as chaves e valores do dicionário"""
+
+#Teste para determinar se uma chave existe no dicionário, usando o operador "in" ou o método get():
+
+Teste_dicionario = {
+    "nome": "Juan",
+    "idade": 25,
+    "cidade": "São Paulo",
+    "profissão": "Engenheiro"
+}
+
+"""if "nome" in Teste_dicionario:
+    print("A chave 'nome' existe no dicionário.")
+
+if Teste_dicionario.get("nome") is not None:
+    print("A chave 'nome' existe no dicionário.")"""
+
+"""Crie um programa que imprime o número de caracteres únicos em uma
+string criada pelo usuário. Por exemplo, Hello, World! tem 10 caracteres
+únicos, enquanto zzz tem somente 1 caractere único. Use um dicionário
+para resolver este problema."""
+
+"OBS: as chaves de um dicionário não se repetem,"
+"o número de chaves acaba sendo o número de caracteres únicos."
+
+"""letras = {}
+texto = input("Entre com um texto: ")
+
+for x in texto: 
+    letras[x] = 0
+
+print(letras)
+print("A frase tem %d caracteres únicos" % len(letras))"""
+
+#Dicionário de funções
+#É possível usar um dicionário para guardar funções a serem executadas
+
+"""dicionario={
+    '+' : lambda x,y: x+y, #O + chama a função lambda que soma x e y (paramêtros)
+    '-' : lambda x,y: x-y, #O - chama a função lambda que subtrai x e y (paramêtros)
+    '*' : lambda x,y: x*y, #O * chama a função lambda que multiplica x e y (paramêtros)
+    '/' : lambda x,y: x/y #O / chama a função lambda que divide x e y (paramêtros)
+}
+
+num1=float(input("Entre com o primeiro número: "))
+num2=float(input("Entre com o segundo número: "))
+operador=input("Entre com o operador (+, -, *, /): ")
+
+try:
+    print(dicionario[operador](num1,num2)) #Chama a função lambda que soma num1 e num2
+except KeyError:
+    print("Operador inválido!")
+"""
+
+#Salvando o dicionário em um arquivo:
+
+dicionario = {
+    "nome": "Juan", 
+    "idade": 25,
+    "cidade": "São Paulo"
+}
+
+"""def salvar_dicionario_em_arquivo(dicionario):
+    file = open("dicionario.txt", "w")
+    f.write(str(dicionario)) #Salva o dicionário como string no arquivo
+    file.close()
+
+def carregar_dicionario_de_arquivo():
+    file = open("dicionario.txt", "r")
+    data=file.read() #Lê o conteúdo do arquivo como string
+    file.close()
+    return eval(data) #Converte a string de volta para dicionário usando eval()
+
+print(dicionario)
+salvar_dicionario_em_arquivo(dicionario)
+dicionario_carregado = carregar_dicionario_de_arquivo()
+print(dicionario_carregado)"""
