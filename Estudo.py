@@ -1478,3 +1478,76 @@ if dic1 == dic2:
     print("As palavras são anagramas")
 else:
     print("As palavras não são anagramas.")"""
+
+#Módulos são arquivos que podem ser importados para o programa para serem executados
+#Podem possuir funções, variáveis e constantes
+
+#importação absoluta (pra usar alguma estrutura do módulo):
+
+"""
+import os #Importando módulo OS para usar a função remove()
+
+os.remove('arquivo.txt')
+"""
+
+#importação relativa: from e import
+
+"""
+from os import remove
+remove('arquivo.txt')
+"""
+
+#OBS: o * importa tudo que está no módulo. Não é recomendado, pois pode gerar problemas
+#como o conflito de variáveis por exemplo.
+
+#criando módulos:
+
+#criar arquivo com função:
+
+#calculo.py
+
+"""
+def média(lista):
+    fmedia=sum(lista)/len(lista)
+    return fmedia
+"""
+
+#importação absoluta renomeando o módulo
+"""import calculo as calc""" 
+
+#importação relativa renomeando a função
+"""from calculo import media as mean"""
+
+#se houver partes do módulo que não é para serem executadas, colocamos dentro
+# de um if:
+
+"""if __name__ == "__main__"""  #Se este arquivo estiver sendo executado como programa principal, execute o bloco abaixo.
+
+"""
+Quando um módulo é diretamente executado, __name__ é
+definido como “__main__”
+
+Quando o módulo é importado, __name__ fica igual ao nome
+do módulo, ou seja, do arquivo.
+"""
+
+#Biblioteca padrão do Python:
+#Matemática: math, random
+#Sistema: os, sys, zipfile
+#Tempo: time, datetime
+
+#Pacotes
+"""
+Módulos são estruturados em arquivos, enquanto que, pacotes são estruturados em pastas.
+● Todos os pacotes devem conter um arquivo __init__.py
+● Os arquivos __init__.py servem para que o interpretador possa identificar
+quais diretórios são pacotes e quais não são.
+● __init__.py pode ser apenas um arquivo vazio, mas pode também executar
+código de inicialização do pacote.
+● Para acelerar o carregamento de módulos, o Python guarda versões
+compiladas de cada módulo no diretório __pycache__
+● Em __pycache__ serão criados arquivos com a extensão .pyc,
+esses arquivos são versões compiladas por bytecode.
+● Para seu programa você pode ignorar a existência desses arquivos,
+mas eles tornarão seu programa um pouco mais rápido.
+"""
