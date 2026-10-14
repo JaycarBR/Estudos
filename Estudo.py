@@ -1223,7 +1223,7 @@ del Teste_dicionario["profissão"] #del Remove o par chave-valor associado à ch
 
 #keys() #Retorna todas as chaves do dicionário
 #values() #Retorna todos os valores do dicionário
-#list(dicionario) #Após o métido keys() ou values() retorna uma lista de todas as chaves ou valores do dicionário
+#list(dicionario) #Após o método keys() ou values() retorna uma lista de todas as chaves ou valores do dicionário
 #items() #Retorna uma lista de tuplas, onde cada tupla contém um par chave-valor do dicionário
 #clear() #Remove todos os pares chave-valor do dicionário
 #copy() #Retorna uma cópia rasa do dicionário
@@ -1352,3 +1352,129 @@ print(dicionario)
 salvar_dicionario_em_arquivo(dicionario)
 dicionario_carregado = carregar_dicionario_de_arquivo()
 print(dicionario_carregado)"""
+
+#Tuplas são estruturas de dados que armazenam uma sequência de elementos,
+#que podem ser de tipos diferentes, e são imutáveis.
+#As tuplas são definidas usando parênteses () e os elementos são separados
+# por vírgulas. Por exemplo:
+#tupla = (1, 2, 3, 'a', 'b')
+
+#Conjuntos são coleções de elementos únicos, ou seja, não podem conter elementos duplicados.
+#Podem ser implementados como listas, dicionários ou tuplas.
+#Em python, são implementados como o tipo set (sequência), que é uma coleção não ordenada de elementos únicos.
+#Uma lista não seria aceita como elemento de um conjunto, pois uma lista pode conter elementos duplicados.
+
+#Exemplo de conjunto implementado por set:
+
+"""s=set([1, 2, 9, 100, 'a'])
+
+for x in s:
+    print(x) #Retorna todos os elementos do conjunto, mas não necessariamente na ordem em que foram adicionados."""
+
+#A ordem em conjuntos muda porque conjuntos são estruturas de dados não ordenadas, ou seja, não mantêm a ordem
+#dos elementos como listas e tuplas. Como conjunto matemático, não há a imposição de uma ordem específica para os elementos.
+#Quando é criado o conjunto a partir de uma lista, o Python tem a liberdade de alterar a ordem dos elementos, organizando-os
+#de forma otimizada para operações de busca e inserção, que são mais eficientes em conjuntos do que em listas.
+
+#métodos de conjuntos (sets):
+
+"""
+add() - Adiciona um elemento ao conjunto. Se o elemento já existir, não faz nada.
+clear() - Remove todos os elementos do conjunto.
+copy() - Retorna uma cópia rasa do conjunto.
+difference() - Retorna um novo conjunto contendo a diferença entre 2 ou mais sets, ou seja, os elementos que estão no conjunto original, mas não estão nos conjuntos passados como parâmetro.
+difference_update() - Remove os elementos do conjunto original que estão no conjunto passado como parâmetro.
+discard() - Remove um elemento do conjunto. Se o elemento não existir, não faz nada.
+intersection() - Retorna um novo conjunto contendo a interseção entre 2 ou mais sets, ou seja, os elementos que estão em todos os conjuntos.
+intersection_update() - Remove os elementos do conjunto original que não estão no conjunto passado como parâmetro
+isdisjoint() - Retorna True se o conjunto original não tiver elementos em comum com o conjunto passado como parâmetro, ou seja, se a interseção entre os conjuntos for vazia.
+issubset() - Retorna True se todos os elementos do conjunto original estiverem no conjunto passado como parâmetro, ou seja, se o conjunto original for um subconjunto do conjunto passado como parâmetro.
+issuperset() - Retorna True se todos os elementos do conjunto passado como parâmetro estiverem no conjunto original, ou seja, se o conjunto original for um superconjunto do conjunto passado como parâmetro.
+pop() - Remove e retorna um elemento aleatório do conjunto. Se o conjunto estiver vazio, gera um erro.
+remove() - Remove um elemento do conjunto. Se o elemento não existir, gera um erro.
+symmetric_difference() - Retorna um novo conjunto contendo a diferença simétrica entre 2 conjuntos, ou seja, os elementos que estão em um dos conjuntos, mas não em ambos.
+symmetric_difference_update() - Remove os elementos do conjunto original que estão no conjunto passado como parâmetro, e adiciona os elementos do conjunto passado como parâmetro que não estão no conjunto original.
+union() - Retorna um novo conjunto contendo a união entre 2 ou mais sets, ou seja, todos os elementos que estão em pelo menos um dos conjuntos.
+update() - Adiciona os elementos do conjunto passado como parâmetro ao conjunto original. Se algum elemento já existir, não faz nada.
+"""
+
+#Excessões são erros que ocorrem durante a execução de um programa, e podem ser tratados com o bloco try-except.
+#A maioria das excessões não são tratadas, e quando ocorrem, o programa é interrompido e uma mensagem de erro é exibida.
+#Para tratar os erros, usamos o try e except:
+
+"""try:
+    #blocos de código que podem gerar erros
+except Exception:
+    #blocos de código que tratam os erros"""
+
+#O tratamento é importante para evitar que o programa seja interrompido.
+#Quando não sabemos qual tiopo de erro pode ocorrer, usamos apenas o Exception, que é a classe base para todas as excessões.
+# Mas podemos tratar erros específicos, como ZeroDivisionError, ValueError, IndexError, KeyError, FileNotFoundError, etc.
+
+#Também podemos adicionar o "finally" onde colocamos o código que deve ser executado independente de ter ocorrido um erro
+#ou não, como fechar arquivos, liberar recursos, etc.
+
+"""try:
+    #blocos de código que podem gerar erros
+except Exception:
+    #blocos de código que tratam os erros
+finally:
+    #códigos sempre executados, com ou sem excessão
+    """
+
+#Ainda pode ser adicionado o bloco "else", que deve ser colocado por último, irá ser executado se não houver nenhuma excessão.
+
+"""try:
+    #blocos de código que podem gerar erros
+except Exception:
+    #blocos de código que tratam os erros
+else:
+    #códigos executador se não acontecer nenhuma excessão
+    """
+
+"""Duas palavras são anagramas se contiverem todas as mesmas letras, mas em
+uma ordem diferente. Por exemplo, estante e setenta são anagramas. Crie uma
+função que recebe duas strings do usuário e determina se elas são ou não
+anagramas. Utilize dicionário para resolver o problema."""
+
+"""import sys
+print("Entre com 2 palavras pra saber se são anagramas.")
+palavra1=input("1º Palavra: ").lower()
+palavra2=input("2º Palavra: ").lower()
+chave1=[]
+chave2=[]
+dic1={}
+dic2={}
+
+for letra in range(len(palavra1)):
+    if palavra1[letra] not in chave1:
+        chave1.append(palavra1[letra])
+    else:
+        continue
+
+for letra in range(len(palavra2)):
+    if palavra2[letra] not in chave2:
+        chave2.append(palavra2[letra])
+    else:
+        continue
+
+dic1=dict.fromkeys(chave1, 0)
+print(dic1)
+dic2=dict.fromkeys(chave2, 0)
+print(dic2)
+
+for letra in range(len(palavra1)):
+    print("letra testada: %s" % palavra1[letra])
+    dic1[palavra1[letra]] += 1    
+    
+for letra in range(len(palavra2)):
+    if palavra2[letra] not in chave1:
+        print("As palavras não são anagramas.")
+        sys.exit()
+    else:
+        dic2[palavra2[letra]] += 1
+
+if dic1 == dic2:
+    print("As palavras são anagramas")
+else:
+    print("As palavras não são anagramas.")"""
