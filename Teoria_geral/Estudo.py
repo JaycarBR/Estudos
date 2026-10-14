@@ -611,9 +611,11 @@ def teste2(**kwargs):
 teste2(a=5, b="juan", c=25)
 """
 
-def docteste(a=2, b=8):  #função para testar Docstring
+
+""def docteste(a=2, b=8):  #função para testar Docstring
     """Texto apenas para verificar o funcionamento da função DocString"""
     return(a+b)
+""
 
 """
 print(docteste.__doc__)
@@ -963,7 +965,7 @@ if exists == False:
     sys.exit()"""
 
 #Usar o controle de exceções para tratar erros de abertura de arquivo:
-
+"""
 try:                                                        #try tenta executar o código dentro do bloco, se der erro, vai para o except
     report = open("teste.dat", "w")                         #Acessa o arquivo para escrita
     report.write("Alguma mensagem")                         #Escreve a mensagem no arquivo
@@ -971,6 +973,7 @@ except Exception as e:                                      #except captura o er
     report.write("Erro ao abrir o arquivo: %s" % e)         #Escreve a mensagem de erro no arquivo
 finally:                                                    #finally executa o código dentro do bloco, independente de ter dado erro ou não
     report.close()                                          #.close() Fecha o arquivo
+"""
 
 #Enquanto o arquivo não for fechado, o SO não libera o uso do arquivo e de seus recursos, e continua ocupando memória auxíliar do buffer.
 #O Python posseui um coletor de lixo próprio para limpar objetos não-referenciados, mas não devemos confiar nele para liberar recursos do SO,
@@ -1236,7 +1239,7 @@ del Teste_dicionario["profissão"] #del Remove o par chave-valor associado à ch
 #eval() #Converte uma string de volta para dicionário, mas deve ser usado com cuidado, pois pode executar código malicioso se a string não for confiável.
 
 #dict. é a forma de criar um dicionário vazio, ou seja, sem pares chave-valor. Por exemplo:
-dicionario_vazio = dict() #Cria um dicionário vazio
+#dicionario_vazio = dict() #Cria um dicionário vazio
 
 #exemplo fromkeys():
 """x=["nome", "idade", "cidade"]
@@ -1279,12 +1282,12 @@ for chave, valor in Teste_dicionario.items():
 
 #Teste para determinar se uma chave existe no dicionário, usando o operador "in" ou o método get():
 
-Teste_dicionario = {
+"""Teste_dicionario = {
     "nome": "Juan",
     "idade": 25,
     "cidade": "São Paulo",
     "profissão": "Engenheiro"
-}
+}"""
 
 """if "nome" in Teste_dicionario:
     print("A chave 'nome' existe no dicionário.")
@@ -1331,11 +1334,11 @@ except KeyError:
 
 #Salvando o dicionário em um arquivo:
 
-dicionario = {
+"""dicionario = {
     "nome": "Juan", 
     "idade": 25,
     "cidade": "São Paulo"
-}
+}"""
 
 """def salvar_dicionario_em_arquivo(dicionario):
     file = open("dicionario.txt", "w")
