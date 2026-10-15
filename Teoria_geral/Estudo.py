@@ -612,10 +612,10 @@ teste2(a=5, b="juan", c=25)
 """
 
 
-""def docteste(a=2, b=8):  #função para testar Docstring
+def docteste(a=2, b=8):  #função para testar Docstring
     """Texto apenas para verificar o funcionamento da função DocString"""
     return(a+b)
-""
+
 
 """
 print(docteste.__doc__)
