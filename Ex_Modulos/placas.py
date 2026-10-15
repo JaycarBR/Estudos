@@ -35,6 +35,7 @@ def geraplaca():
     placa.insert(3,str(numeros[0]))
     for x in range(1, 3):
         placa.append(str(numeros[x]))
+    placa="".join(placa)
+    placa=placa.replace("-","")
     print(placa)
-
-geraplaca()
+    

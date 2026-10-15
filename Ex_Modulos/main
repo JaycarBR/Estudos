@@ -1,0 +1,13 @@
+import senha
+import placas
+import hipotenusa
+
+#senha.gerasenha()
+
+"""print("Vamos calcular a hipotenusa!")
+num1=int(input("Digite o valor de cat. oposto:  "))
+num2=int(input("Digite o valor de cat. adjacente:  "))
+hipotenusa.hipotenusa(num1, num2)"""
+
+placas.geraplaca()
+
